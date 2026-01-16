@@ -6,17 +6,6 @@
 ユーザーはお問い合わせを送信でき、  
 管理者は会員登録・ログイン後にお問い合わせ内容の確認・検索・削除・CSVエクスポートを行うことができます。
 
----
-
-## 使用技術
-
-- PHP 8.x
-- Laravel 9.x
-- MySQL
-- Docker / Docker Compose
-- Laravel Fortify（認証機能）
-
----
 
 ## 環境構築手順
 
@@ -90,3 +79,20 @@ docker-compose exec app php artisan db:seed
 	•	認証機能には Laravel Fortify を使用しています。
 	•	バリデーションは FormRequest を使用しています。
 	•	設計・実装は COACHTEC の案件シートに準拠しています。
+
+	---
+
+## 使用技術
+
+- PHP 8.x
+- Laravel 9.x
+- MySQL
+- Docker / Docker Compose
+- Laravel Fortify（認証機能）
+
+---
+
+## ER図
+
+![ER図](./docs/er_diagram.png)
+
