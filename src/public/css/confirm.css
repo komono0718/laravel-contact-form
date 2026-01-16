@@ -1,80 +1,104 @@
+/* ===== 共通 ===== */
+body {
+    font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+    background-color: #ffffff;
+    color: #5c4b3b;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ===== ヘッダー ===== */
 .header {
-    background: #000;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 .header__inner {
-    margin: 0 auto;
-    padding: 20px 15px;
     max-width: 1230px;
-}
-
-.header__logo {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 24px;
-}
-
-.confirm__content {
     margin: 0 auto;
-    padding: 30px 15px;
-    max-width: 1230px;
-}
-
-.confirm__heading {
-    margin-bottom: 40px;
+    padding: 20px 0;
     text-align: center;
 }
 
-.form {
-    margin: 0 auto;
-    width: 70%;
+.header__logo {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 0.05em;
 }
 
+/* ===== 確認画面 ===== */
+.confirm__content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.confirm__heading {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+/* ===== テーブル ===== */
 .confirm-table {
-    border: 1px solid #ddd;
+    width: 100%;
+    margin-bottom: 40px;
 }
 
 .confirm-table__inner {
     width: 100%;
+    border-collapse: collapse;
 }
 
-.confirm-table__header {
-    padding: 15px;
-    width: 20%;
-    border-bottom: 1px solid #ddd;
-    background-color: #eee;
-    font-weight: bold;
+.confirm-table__inner th,
+.confirm-table__inner td {
+    padding: 16px;
+    border: 1px solid #ddd;
+    font-size: 14px;
 }
 
-.confirm-table__text {
-    padding: 15px;
-    border-bottom: 1px solid #ddd;
+.confirm-table__inner th {
+    width: 30%;
+    background-color: #8b7969;
+    color: #ffffff;
+    font-weight: normal;
+    text-align: left;
 }
 
-.confirm-table__text input {
-    width: 100%;
-    outline: none;
-    border: none;
+.confirm-table__inner td {
+    background-color: #ffffff;
 }
 
-.confirm-table__row:last-child .confirm-table__header,
-.confirm-table__row:last-child .confirm-table__text {
-    border-bottom-width: 0;
+/* ===== hidden input ===== */
+.confirm-table__inner input[type="hidden"] {
+    display: none;
 }
 
+/* ===== ボタン ===== */
 .form__button {
-    margin-top: 30px;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .form__button-submit {
-    padding: 10px;
-    width: 30%;
-    height: 50px;
+    width: 200px;
+    padding: 12px;
+    font-size: 14px;
     border: none;
-    border-radius: 3px;
-    background: #000;
-    color: #fff;
+    background-color: #8b7969;
+    color: #ffffff;
     cursor: pointer;
+}
+
+.form__button-submit:hover {
+    opacity: 0.85;
+}
+
+/* 修正ボタン */
+.form__button-submit--back {
+    background-color: #ffffff;
+    color: #8b7969;
+    border: 1px solid #8b7969;
 }
