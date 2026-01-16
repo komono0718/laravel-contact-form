@@ -96,3 +96,13 @@ docker-compose exec app php artisan db:seed
 
 ![ER図](./docs/er_diagram.png)
 
+## ダミーデータについて
+
+以下のコマンドを実行することで、ダミーデータを作成できます。
+
+```bash
+php artisan db:seed
+```
+
+	•	categories テーブル：5件（CategoriesSeeder 使用）
+	•	contacts テーブル：35件（factory 使用）
