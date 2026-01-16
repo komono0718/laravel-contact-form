@@ -80,7 +80,6 @@ docker-compose exec app php artisan db:seed
 	•	バリデーションは FormRequest を使用しています。
 	•	設計・実装は COACHTEC の案件シートに準拠しています。
 
-	---
 
 ## 使用技術
 
@@ -90,7 +89,11 @@ docker-compose exec app php artisan db:seed
 - Docker / Docker Compose
 - Laravel Fortify（認証機能）
 
----
+## 開発環境
+
+	•	お問い合わせ画面：　http://localhost/
+	•	ユーザー登録画面：　http://localhost/register
+	•	phpMyAdmin：　　　http://localhost:8080/
 
 ## ER図
 
