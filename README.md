@@ -86,3 +86,7 @@ docker-compose exec app php artisan db:seed
 	•	contacts テーブル：35件（factory 使用）
 
 
+## 備考
+	•	認証機能には Laravel Fortify を使用しています。
+	•	バリデーションは FormRequest を使用しています。
+	•	設計・実装は COACHTEC の案件シートに準拠しています。
