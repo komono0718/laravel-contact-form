@@ -1,57 +1,88 @@
-# laravel-docker-template
+# FashionablyLate お問い合わせ管理システム
 
-## 事前準備
-以下がインストール・起動されていることを前提とします。
+本アプリケーションは、お問い合わせフォームの送信および  
+管理画面からのお問い合わせ管理を行うWebアプリケーションです。
 
-- Git
-- Docker Desktop（起動していること）
+ユーザーはお問い合わせを送信でき、  
+管理者は会員登録・ログイン後にお問い合わせ内容の確認・検索・削除・CSVエクスポートを行うことができます。
 
-## 環境構築
+---
+
+## 使用技術
+
+- PHP 8.x
+- Laravel 9.x
+- MySQL
+- Docker / Docker Compose
+- Laravel Fortify（認証機能）
+
+---
+
+## 環境構築手順
+
+以下の手順で、**マイグレーション実行まで** 環境構築が可能です。
 
 ### 1. リポジトリをクローン
-任意のディレクトリで以下を実行してください。
-```
-git clone git@github.com:komono0718/laravel-contact-form.git
-cd laravel-contact-form
+
+```bash
+git clone <リポジトリURL>
+cd <プロジェクトディレクトリ>
 ```
 
-### 2. Dockerコンテナをビルド・起動
-```
-docker-compose up -d --build
-```
+### 2. .env ファイルの作成
 
-### 3. PHPコンテナに入る
-```
-docker-compose exec php bash
-```
-
-### 4. Composerパッケージのインストール
-```
-composer install
-```
-
-### 5. 環境変数ファイルの作成
-```
+```bash
 cp .env.example .env
 ```
 
-### 6. 環境変数の設定
-.env ファイルを以下のように修正してください。
-```
+.env を開き、以下のデータベース設定を環境に合わせて変更してください。
+
+```bash
 DB_CONNECTION=mysql
-DB_HOST=mysql
+DB_HOST=db
 DB_PORT=3306
 DB_DATABASE=laravel_db
 DB_USERNAME=laravel_user
 DB_PASSWORD=laravel_pass
 ```
 
-### 7. アプリケーションキー生成
-```
-php artisan key:generate
+### 3. Docker コンテナの起動
+
+```bash
+docker-compose up -d
 ```
 
-### 8. マイグレーションの実行
+### 4. Composer インストール
+
+```bash
+docker-compose exec app composer install
 ```
-php artisan migrate
+
+### 5. アプリケーションキー生成
+
+```bash
+docker-compose exec app php artisan key:generate
 ```
+
+### 6. マイグレーション実行
+
+```bash
+docker-compose exec app php artisan migrate
+```
+
+### 7. シーディング（ダミーデータ作成）
+
+```bash
+docker-compose exec app php artisan db:seed
+```
+
+作成されるダミーデータ
+	•	categories テーブル：5件
+	•	商品のお届けについて
+	•	商品の交換について
+	•	商品トラブル
+	•	ショップへのお問い合わせ
+	•	その他
+	•	contacts テーブル：35件（factory 使用）
+
+
