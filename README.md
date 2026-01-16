@@ -14,11 +14,34 @@
 ### 1. リポジトリをクローン
 
 ```bash
-git clone <リポジトリURL>
-cd <プロジェクトディレクトリ>
+git clone <git@github.com:komono0718/laravel-contact-form.git>
 ```
 
-### 2. .env ファイルの作成
+### 2. プロジェクトへ移動
+
+```bash
+cd laravel-contact-form
+```
+
+### 3. Docker コンテナの作成&起動
+
+```bash
+docker compose up -d --build
+```
+
+### 4. PHPコンテナにログイン
+
+```bash
+docker compose exec php bash
+```
+
+### 5. Composer インストール
+
+```bash
+composer install
+```
+
+### 6. .env ファイルの作成
 
 ```bash
 cp .env.example .env
@@ -28,41 +51,30 @@ cp .env.example .env
 
 ```bash
 DB_CONNECTION=mysql
-DB_HOST=db
+DB_HOST=mysql
 DB_PORT=3306
 DB_DATABASE=laravel_db
 DB_USERNAME=laravel_user
 DB_PASSWORD=laravel_pass
 ```
 
-### 3. Docker コンテナの起動
+### 7. アプリケーションキー生成
 
 ```bash
-docker-compose up -d
+php artisan key:generate
 ```
 
-### 4. Composer インストール
+
+### 8. マイグレーション実行
 
 ```bash
-docker-compose exec app composer install
+php artisan migrate
 ```
 
-### 5. アプリケーションキー生成
+### 9. シーディング（ダミーデータ作成）
 
 ```bash
-docker-compose exec app php artisan key:generate
-```
-
-### 6. マイグレーション実行
-
-```bash
-docker-compose exec app php artisan migrate
-```
-
-### 7. シーディング（ダミーデータ作成）
-
-```bash
-docker-compose exec app php artisan db:seed
+php artisan db:seed
 ```
 
 作成されるダミーデータ
