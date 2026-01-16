@@ -20,7 +20,6 @@
 <form action="{{ route('confirm') }}" method="post">
   @csrf
 
-    <!-- お名前 -->
     <div class="form-row">
       <div class="form-label">
         お名前 <span class="required">※</span>
@@ -30,15 +29,17 @@
         <input class="input" type="text" name="first_name" placeholder="例：太郎">
       </div>
     </div>
-<div class="form-row">
-  <div class="form-label">
-    性別 <span class="required">※</span>
-  </div>
 
-  <div class="radio-group">
-    <label class="radio-item">
+    <div class="form-control">
+    <div class="form-row">
+      <div class="form-label">
+        性別 <span class="required">※</span>
+    </div>
+
+    <div class="radio-group">
+      <label class="radio-item">
       <input type="radio" name="gender" value="1"> 男性
-    </label>
+      </label>
     <label class="radio-item">
       <input type="radio" name="gender" value="2"> 女性
     </label>
@@ -48,16 +49,15 @@
   </div>
 </div>
 
-    <!-- メール -->
     <div class="form-row">
       <div class="form-label">
         メールアドレス <span class="required">※</span>
       </div>
+      <div class="form-control">
         <input class="input input--full" type="email" name="email" placeholder="例：test@example.com">
       </div>
     </div>
 
-    <!-- 電話 -->
     <div class="form-row">
       <div class="form-label">
         電話番号 <span class="required">※</span>
@@ -71,7 +71,6 @@
       </div>
     </div>
 
-    <!-- 住所 -->
     <div class="form-row">
       <div class="form-label">
         住所 <span class="required">※</span>
@@ -81,7 +80,6 @@
       </div>
     </div>
 
-    <!-- 建物 -->
     <div class="form-row">
       <div class="form-label">
         建物名
@@ -91,7 +89,6 @@
       </div>
     </div>
 
-    <!-- 種類 -->
 <div class="form-row">
   <div class="form-label">
     お問い合わせの種類 <span class="required">※</span>
@@ -106,7 +103,6 @@
   </div>
 </div>
 
-    <!-- 内容 -->
     <div class="form-row form-row--textarea">
       <div class="form-label">
         お問い合わせ内容 <span class="required">※</span>
