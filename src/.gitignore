@@ -13,3 +13,9 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+
+# macOS
+.DS_Store
+
+# Docker MySQL data
+docker/mysql/data/
