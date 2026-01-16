@@ -2,9 +2,9 @@
 
 namespace App\Providers;
 
+use App\Actions\Fortify\CreateNewUser;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Fortify\Fortify;
-use App\Actions\Fortify\CreateNewUser;
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -15,15 +15,12 @@ class FortifyServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-        // ★ ユーザー登録処理をFortifyに教える（必須）
         Fortify::createUsersUsing(CreateNewUser::class);
 
-        // ログイン画面
         Fortify::loginView(function () {
             return view('auth.login');
         });
 
-        // 会員登録画面
         Fortify::registerView(function () {
             return view('auth.register');
         });

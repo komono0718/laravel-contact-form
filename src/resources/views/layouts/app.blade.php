@@ -4,11 +4,9 @@
   <meta charset="UTF-8">
   <title>@yield('title', 'FashionablyLate')</title>
 
-  {{-- 共通CSS --}}
   <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
   <link rel="stylesheet" href="{{ asset('css/index.css') }}">
 
-  {{-- 画面ごとのCSS --}}
   @yield('css')
 </head>
 
@@ -18,7 +16,6 @@
   <div class="header__inner">
     <a class="header__logo" href="/">FashionablyLate</a>
 
-    {{-- ログイン関連（今は仮） --}}
     @hasSection('header-button')
       @yield('header-button')
     @endif

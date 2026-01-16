@@ -200,7 +200,7 @@
       <input type="hidden" name="id" id="modal-delete-id">
       <button type="submit" class="btn-small btn-delete">削除</button>
     </form>
-  </div>
+  </div>Ï
 </div>
 
 <script>

@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Category;
 
 class Contact extends Model
 {
@@ -15,13 +14,11 @@ class Contact extends Model
         'first_name',
         'gender',
         'email',
-        'tel1',
-        'tel2',
-        'tel3',
+        'tel',          // ← ★ これ
         'address',
         'building',
         'category_id',
-        'content',
+        'detail',       // ← ★ これ
     ];
 
     public function category()

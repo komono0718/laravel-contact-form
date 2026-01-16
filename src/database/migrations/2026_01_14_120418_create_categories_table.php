@@ -13,11 +13,12 @@ class CreateCategoriesTable extends Migration
      */
     public function up()
     {
-Schema::create('categories', function (Blueprint $table) {
-    $table->id();
-    $table->string('content'); // ← お問い合わせ種類名
-    $table->timestamps();
-});    }
+        Schema::create('categories', function (Blueprint $table) {
+            $table->id();
+            $table->string('content');
+            $table->timestamps();
+        });
+    }
 
     /**
      * Reverse the migrations.
